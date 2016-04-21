@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Navigation from '../components/Nav';
 //import * as actionCreators from '../actions/action-creators';
 //import Counter from '../components/Counter';
 
@@ -7,7 +8,8 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-               <h1>Well isn't this just awesome?</h1> 
+                <Navigation />
+                <h1>Well isn't this just awesome?</h1> 
             </div>
         );  
     } 
