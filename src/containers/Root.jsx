@@ -1,11 +1,11 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import App from './App';
+import AppContainer from './AppContainer';
 import LogIn from '../pages/LogIn';
 import Group from '../pages/Group';
 import Mine from '../pages/Mine';
 import configureStore from '../configure-store';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import { syncHistoryWithStore} from 'react-router-redux';
 
 const initialState = {user:{name:'jesse'}};
@@ -17,8 +17,8 @@ const history = syncHistoryWithStore(browserHistory, store);
 const Root = () => 
     <Provider store = { store }>
         <Router history = { history }>
-          <Route path = "/" component = { App }>
-            <Route path = "login" component = { LogIn } />
+          <Route path = "/" component = { AppContainer }>
+            <IndexRoute component={Group}/>
             <Route path = "group" component = { Group } />
             <Route path = "mine" component = { Mine } />
           </Route>

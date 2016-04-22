@@ -1,21 +1,26 @@
 import React         from 'react';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
-import NavHeader      from './NavHeader';
+import NavBrand      from './NavBrand';
 import AwesomeNavItem from './AwesomeNavItem';
 
 const Navigation = ({
     showNavSections, 
     name, 
     headerClick, 
-    groupRankingsClick, 
+    groupRankingsClick,
     myRankingsClick, 
+    hamburgerClick,
+    isCollapsed = undefined,
     logout
 }) =>
     <Navbar inverse>
-        <NavHeader onClick = { headerClick }/>
+        <Navbar.Header>
+            <NavBrand onClick = { headerClick }/>    
+            <Navbar.Toggle onClick = { hamburgerClick }/>
+        </Navbar.Header>
         {showNavSections ? 
-        <Navbar.Collapse>
+        <Navbar.Collapse in = {!isCollapsed}>
             <Nav>
                 <AwesomeNavItem iconName = "users" 
                                 onClick  = { groupRankingsClick } > 
@@ -36,7 +41,7 @@ const Navigation = ({
                     Log Out 
                 </AwesomeNavItem>
             </Nav>
-        </Navbar.Collapse> : ''}
-    </Navbar>;
+        </Navbar.Collapse> : null}
+    </Navbar>
     
 export default Navigation;

@@ -3,8 +3,9 @@ import CenteredPagewide from './CenteredPagewide';
 
 const Footer = () => 
     <CenteredPagewide>
+        <hr />
         <span>
-            &copy; Jesse Robertson {'2016'}
+            &copy; Jesse Robertson {new Date().getFullYear()}
         </span>
     </CenteredPagewide>;
     
