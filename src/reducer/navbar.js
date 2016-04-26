@@ -1,5 +1,5 @@
 import {TOGGLE_NAVBAR, LOCATION_CHANGE} from '../constants/actions.js';
-import mapToReducer from './mapToReducer';
+import mapToReducer from '../util/mapToReducer';
 
 const initialNavbar = {
     isCollapsed: true

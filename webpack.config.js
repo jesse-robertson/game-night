@@ -1,5 +1,6 @@
 var webpack =  require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval',
@@ -10,11 +11,16 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/static/',
+        // publicPath: '/static/',
         filename: 'bundle.js'
     },
     plugins : [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            favicon: 'src/static/favicon.ico',
+            template: 'src/static/index.html'
+        })
+        
     ],
     module: {
         loaders: [{

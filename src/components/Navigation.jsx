@@ -1,8 +1,10 @@
-import React         from 'react';
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import React from 'react';
+import {Navbar} from 'react-bootstrap';
 
-import NavBrand      from './NavBrand';
-import AwesomeNavItem from './AwesomeNavItem';
+import NavBrand from './NavBrand';
+import NavSections from './NavSections';
+import Hideable from './Hideable';
+
 
 const Navigation = ({
     showNavSections, 
@@ -19,29 +21,15 @@ const Navigation = ({
             <NavBrand onClick = { headerClick }/>    
             <Navbar.Toggle onClick = { hamburgerClick }/>
         </Navbar.Header>
-        {showNavSections ? 
-        <Navbar.Collapse in = {!isCollapsed}>
-            <Nav>
-                <AwesomeNavItem iconName = "users" 
-                                onClick  = { groupRankingsClick } > 
-                    Group Rankings 
-                </AwesomeNavItem>
-                <AwesomeNavItem iconName = "user" 
-                                onClick  = { myRankingsClick } >
-                    My Rankings 
-                </AwesomeNavItem>
-            </Nav>
-            <Nav pullRight>
-                <NavItem>
-                    Hey {name}!!
-                    
-                </NavItem>
-                <AwesomeNavItem iconName = "sign-out" 
-                                onClick  = { logout } > 
-                    Log Out 
-                </AwesomeNavItem>
-            </Nav>
-        </Navbar.Collapse> : null}
+        
+        <Navbar.Collapse in={!isCollapsed}>
+            <Hideable hide={!showNavSections}>
+                <NavSections groupRankingsClick={groupRankingsClick} 
+                             myRankingsClick={myRankingsClick}
+                             name={name}
+                             logout={logout}/>
+            </Hideable>    
+        </Navbar.Collapse>
     </Navbar>
     
 export default Navigation;

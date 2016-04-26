@@ -2,12 +2,12 @@ import React from 'react';
 
 import NavContainer from '../containers/NavContainer';
 import Footer from './Footer';
-import LogIn from '../pages/LogIn';
+import LoginPageContainer from '../containers/LoginPageContainer';
 
 const App = ({children, showLoginInstead}) => 
     <div>
         <NavContainer />
-        {showLoginInstead ? <LogIn /> : children}
+        {showLoginInstead ? <LoginPageContainer /> : children}
         <Footer />
     </div>;
     
