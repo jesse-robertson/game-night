@@ -1,21 +1,18 @@
 import React from 'react';
-
 import {Table} from 'react-bootstrap';
+import Game from './GameContainer';
 
-import GameContainer from '../containers/GameContainer';
+const gameIdToTableRow = id => 
+    <tr key={id}>
+        <td>
+            <Game id={id} /> 
+        </td>
+    </tr>
 
 const GameList = ({games}) =>
     <Table hover>
         <tbody>
-            {
-                games.map( gameId => 
-                    <tr key = {gameId}>
-                        <td>
-                            <GameContainer id = { gameId } /> 
-                        </td>
-                    </tr>
-                ) 
-            }        
+            { games.map(gameIdToTableRow) }        
         </tbody>
     </Table> 
     

@@ -10,5 +10,5 @@ new WebpackDevServer(webpack(config), {
   if (err) {
     return console.log(err);
   }
-  console.log(`Server Started at ${process.env.PORT} ${process.env.IP}`);
+  console.log(`Server Started at ${process.env.IP}:${process.env.PORT}`);
 });
