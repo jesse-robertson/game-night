@@ -12,3 +12,8 @@ export const LOCATION_CHANGE        = '@@router/LOCATION_CHANGE';
 
 // Data Events
 export const REFRESH_ENTITY         = 'REFRESH_ENTITY';
+
+// Search Events
+export const SEARCH_REQUEST = 'SEARCH_REQUEST';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_CHOOSE  = 'SEARCH_CHOOSE'; 

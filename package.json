@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jesse-robertson/game-night#readme",
   "dependencies": {
     "react": "^15.0.1",
-    "react-bootstrap": "^0.28.5",
+    "react-bootstrap": "^0.29.3",
     "react-dom": "^15.0.1",
     "react-facebook": "^1.0.3",
     "react-fontawesome": "^0.3.3",
