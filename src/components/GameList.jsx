@@ -9,8 +9,8 @@ const gameIdToTableRow = (id) =>
         </td>
     </tr>
 
-const GameList = ({games}) =>
-    <Table hover>
+const GameList = ({games, onBlur}) =>
+    <Table hover >
         <tbody>
             { games.map(gameIdToTableRow) }        
         </tbody>

@@ -12,9 +12,9 @@ const Game = ({
         cover
     },
     showFullDetails = false,
-    toggleDetails
+    onClick
 }) =>
-    <Media className="text-left" onClick={toggleDetails}>
+    <Media className="text-left" onClick={onClick}>
         <Media.Left align="top">
             <img width={46} height={64} src={cover} alt="Image"/>
         </Media.Left>
