@@ -1,7 +1,9 @@
 import React from 'react';
 import {Row, Col, FormControl, Table} from 'react-bootstrap';
 
-const GameSuggestionComposer = ({query, queryChange, cache, choose}) =>
+import GameResult from './GameResult';
+
+const GameSuggestionComposer = ({query, queryChange, results, choose}) =>
     <Row>
         <Col className='text-center' md={4} mdOffset={4} xs={12}>
             <h2>What Should We Play?</h2>
@@ -9,13 +11,17 @@ const GameSuggestionComposer = ({query, queryChange, cache, choose}) =>
                 <FormControl type="text"
                              value={query} 
                              placeholder="Suggest a game!" 
-                             onChange={ (e) => queryChange(e.target.value) }
+                             onChange={queryChange}
                              />
             </form>
             <Table hover>
                 <tbody>
-                    {(cache[query]||[]).map( ({id, name}) =>
-                        <tr key={id} onClick={() => choose(id)}><td>{name}</td></tr>
+                    {results.map( (game) =>
+                        <tr key={game.id} onClick={() => choose(game.id)}>
+                            <td>
+                                <GameResult game={game} />
+                            </td>
+                        </tr>
                     )}    
                 </tbody>
             </Table>

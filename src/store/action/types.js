@@ -18,3 +18,7 @@ export const SEARCH_REQUEST      = 'SEARCH_REQUEST';
 export const SEARCH_QUERY_CHANGE = 'SEARCH_QUERY_CHANGE';
 export const SEARCH_SUCCESS      = 'SEARCH_SUCCESS';
 export const SEARCH_CHOOSE       = 'SEARCH_CHOOSE'; 
+
+
+export const SUGGEST_GAME = 'SUGGEST_GAME';
+export const UNSUGGEST_GAME = 'UNSUGGEST_GAME';

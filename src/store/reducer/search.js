@@ -1,6 +1,4 @@
-import {
-    SEARCH_CHOOSE, 
-    SEARCH_REQUEST, 
+import { 
     SEARCH_SUCCESS,
     SEARCH_QUERY_CHANGE
 } from '../action/types';
@@ -17,13 +15,8 @@ export default mapToReducer(init, {
     [SEARCH_QUERY_CHANGE]: (search, {payload:{query}}) => 
         Object.assign({},search,{query}),
         
-    [SEARCH_CHOOSE]: (search,{payload:{id}}) => 
-        Object.assign({},search,{chosen:id, query:''}),
-        
     [SEARCH_SUCCESS]: (search,{payload:{query,results}}) => {
-        
         const cache = Object.assign({}, search.cache, {[query]:results});
-            
         return Object.assign({},search,{cache}); 
     }
 });

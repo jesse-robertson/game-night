@@ -7,7 +7,10 @@ import {
     SEARCH_CHOOSE,
     SEARCH_REQUEST,
     SEARCH_SUCCESS,
-    SEARCH_QUERY_CHANGE
+    SEARCH_QUERY_CHANGE,
+    SUGGEST_GAME,
+    SUGGEST_GAME_SUCCESS,
+    UNSUGGEST_GAME
 } from './types';
 
 export function facebookLoginSuccess(name) {
@@ -47,7 +50,7 @@ export function toggleNavbar() {
 }
 
 
-// Search Action Creators
+// Search
 export const searchRequest = (query) => ({
     type: SEARCH_REQUEST,
     payload: { query },
@@ -57,11 +60,21 @@ export const searchSuccess = (query, results) => ({
     type: SEARCH_SUCCESS,
     payload: {query, results}
 });
-export const searchChoose = (id) => ({
-    type: SEARCH_CHOOSE,
-    payload: { id }
-});
 export const searchQueryChange = (query) => ({
     type: SEARCH_QUERY_CHANGE,
     payload: {query}
 });
+
+
+// Suggestions
+export const suggestGame = (id) => ({
+    type: SUGGEST_GAME,
+    payload: {id},
+    meta: { remote: true }
+});
+
+export const unsuggestGame = (id) => ({
+    type: UNSUGGEST_GAME,
+    payload: {id},
+    meta: {remote: true}
+})

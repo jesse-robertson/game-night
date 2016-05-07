@@ -1,19 +1,8 @@
-import {connect} from 'react-redux';
+import advancedConnect from '../../store/util/advancedConnect';
 
 import Game from './Game';
 
 import {selectGame, deselectGame} from '../../store/action/creators';
-
-const manualConnect = (mapStateAndDispatchToProps) => connect(
-    (state) => ({state}), 
-    (dispatch) => ({dispatch}), 
-    ({state}, {dispatch}, ownProps) => 
-        Object.assign(
-            {}, 
-            ownProps, 
-            mapStateAndDispatchToProps(state, dispatch, ownProps)
-        )
-);
 
 const mapStateAndDispatchToProps = (state, dispatch, {id}) => {
     const isSelected = state.selectedGameId === id;
@@ -25,4 +14,4 @@ const mapStateAndDispatchToProps = (state, dispatch, {id}) => {
     }
 }
 
-export default manualConnect(mapStateAndDispatchToProps)(Game);
+export default advancedConnect(mapStateAndDispatchToProps)(Game);
