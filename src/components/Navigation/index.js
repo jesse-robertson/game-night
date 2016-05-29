@@ -6,10 +6,10 @@ import Navigation from './Navigation';
 import {logOut, toggleNavbar} from '../../store/action/creators';
 
 const s2p = ({user, navbar}) => ({
-    showNavSections: !!user,
+    showNavSections: false,//!!user,
     name: user && user.name,
     isCollapsed: navbar.isCollapsed,
-    showHamburger: !!user
+    showHamburger: false//!!user
 });
 
 const d2p = {

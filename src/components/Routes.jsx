@@ -16,9 +16,13 @@ const Routes = ({store}) =>
      <Router history = { syncHistoryWithStore(browserHistory, store) }>
       <Route path = {HOME} component = { App }>
         <IndexRoute component = { GroupPage }/>
-        <Route path = {GROUP_RANKINGS} component = { GroupPage } />
-        <Route path = {MY_RANKINGS}   component = { UserPage } />
       </Route>
     </Router>
     
 export default Routes;
+
+
+/** maybe later:
+ <Route path = {GROUP_RANKINGS} component = { GroupPage } />
+        <Route path = {MY_RANKINGS}   component = { UserPage } />
+ */

@@ -6,13 +6,12 @@ import GameResult from './GameResult';
 const GameSuggestionComposer = ({query, queryChange, results, choose}) =>
     <Row>
         <Col className='text-center' md={4} mdOffset={4} xs={12}>
-            <h2>What Should We Play?</h2>
+            <h2>whatever!</h2>
             <form>
-                <FormControl type="text"
-                             value={query} 
-                             placeholder="Suggest a game!" 
-                             onChange={queryChange}
-                             />
+                <FormControl    type="text"
+                                value={query} 
+                                placeholder="Suggest a game!" 
+                                onChange={queryChange} />
             </form>
             <Table hover>
                 <tbody>
