@@ -2,7 +2,7 @@ import React from 'react';
 import {Media} from 'react-bootstrap';
 
 import GameKeywords from '../GameKeywords';
-import MoreLess from '../MoreLess';
+import MoreLess from '../common/MoreLess';
 
 const COVER_SMALL_URL = 'http://res.cloudinary.com/igdb/image/upload/t_cover_small/';
 const COVER_BIG_URL = 'http://res.cloudinary.com/igdb/image/upload/t_cover_big/';

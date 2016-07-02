@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FacebookButton   from './FacebookButtonContainer';
-import CenteredPagewide from './CenteredPagewide';
+import FacebookButton   from './FacebookButton';
+import CenteredPagewide from './common/CenteredPagewide';
 
 const Login = () =>
     <CenteredPagewide>

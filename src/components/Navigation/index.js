@@ -1,23 +1,9 @@
 import {connect} from 'react-redux';
-import {push}    from 'react-router-redux';
-
-import {HOME, GROUP_RANKINGS, MY_RANKINGS} from '../Routes';
 import Navigation from './Navigation';
-import {logOut, toggleNavbar} from '../../store/action/creators';
+import {logOut} from '../../store/action/creators';
 
-const s2p = ({user, navbar}) => ({
-    showNavSections: false,//!!user,
-    name: user && user.name,
-    isCollapsed: navbar.isCollapsed,
-    showHamburger: false//!!user
-});
 
-const d2p = {
-    logOut,
-    hamburgerClick     : toggleNavbar,
-    headerClick        : () => push(HOME),
-    groupRankingsClick : () => push(GROUP_RANKINGS),
-    myRankingsClick    : () => push(MY_RANKINGS)
-};
+const mapStateToProps = ({user}) => ({showLogOut: user})
+    
 
-export default connect(s2p, d2p)(Navigation);
+export default connect(mapStateToProps,{logOut})(Navigation);

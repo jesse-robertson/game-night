@@ -7,7 +7,7 @@ import FacebookButton from './FacebookButton';
 import {
     facebookLoginFailure, 
     facebookLoginSuccess
-} from '../store/action/creators';
+} from '../../store/action/creators';
 
 // Wrap the designed button with the react-facebook login tag
 const wrappedFacebookButton =  ({onSubmit}) =>
@@ -17,8 +17,12 @@ const wrappedFacebookButton =  ({onSubmit}) =>
 
 const s2p = null;
 const d2p = {
-    onSubmit: (err, user) => err ? facebookLoginFailure(err) 
-                                 : facebookLoginSuccess(user.profile.first_name) 
+    onSubmit: (err, user) => {
+        console.log(user.profile.id);
+        if(err) return facebookLoginFailure(err)
+        const {first_name, id, gender} = user.profile; 
+        return facebookLoginSuccess(first_name, id, gender);
+    } 
 };
 
 export default connect(s2p, d2p)(wrappedFacebookButton);

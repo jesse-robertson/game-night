@@ -1,13 +1,8 @@
 import React from 'react';
 import {Navbar} from 'react-bootstrap';
 
-const NavBrand = ({onClick}) =>
+const NavBrand = () =>
     <Navbar.Brand > 
-        <a href = "/" onClick = { e => {
-            e.preventDefault();
-            onClick && onClick(e);
-        }}>
-            The Brash Shmoes!
-        </a>
+        The Brash Shmoes!
     </Navbar.Brand>
 export default NavBrand;

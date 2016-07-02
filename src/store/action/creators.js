@@ -13,14 +13,15 @@ import {
     UNSUGGEST_GAME
 } from './types';
 
-export function facebookLoginSuccess(name) {
+export function facebookLoginSuccess(name, id, gender) {
     return {
         type: FACEBOOK_LOGIN_SUCCESS,
         payload: {
             user: {
-                name
+                name, id, gender
             }
-        }
+        },
+        meta: {remote:true}
     };
 }
 
@@ -41,14 +42,11 @@ export const selectGame = (id) => ({
 
 export const deselectGame = () => selectGame(null);
     
-export function logOut() {
-    return { type: LOG_OUT };
-}
+export const logOut = () => ({ type: LOG_OUT })
 
 export function toggleNavbar() {
     return { type: TOGGLE_NAVBAR };
 }
-
 
 // Search
 export const searchRequest = (query) => ({

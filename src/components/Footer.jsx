@@ -1,5 +1,5 @@
 import React from 'react';
-import CenteredPagewide from './CenteredPagewide';
+import CenteredPagewide from './common/CenteredPagewide';
 
 const Footer = () => 
     <CenteredPagewide>

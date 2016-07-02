@@ -6,7 +6,7 @@ import GameResult from './GameResult';
 const GameSuggestionComposer = ({query, queryChange, results, choose}) =>
     <Row>
         <Col className='text-center' md={4} mdOffset={4} xs={12}>
-            <h2>whatever!</h2>
+            <h2>What should we play?</h2>
             <form>
                 <FormControl    type="text"
                                 value={query} 

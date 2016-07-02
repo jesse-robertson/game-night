@@ -1,36 +1,29 @@
 import React from 'react';
-import {Navbar} from 'react-bootstrap';
-
+import {Navbar, Button} from 'react-bootstrap';
 import NavBrand from './NavBrand';
-import NavSections from './NavSections';
-import Hideable from '../Hideable';
+import Show     from '../common/Show';
+
+
+const LogOutButton = ({logOut}) => 
+    <Button bsStyle="danger" 
+            onClick={logOut} >
+        Log Out
+    </Button>
 
 const Navigation = ({
-    showNavSections,
-    showHamburger,
-    name, 
-    headerClick, 
-    groupRankingsClick,
-    myRankingsClick, 
-    hamburgerClick,
-    isCollapsed = undefined,
-    logOut
+    showLogOut = true,
+    logOut = () => console.log('Navigation.logOut')
 }) =>
     <Navbar inverse>
         <Navbar.Header>
-            <NavBrand onClick = { headerClick }/>    
-            <Hideable hide={!showHamburger}>
-                <Navbar.Toggle onClick = { hamburgerClick }/>
-            </Hideable>
+            <NavBrand />    
         </Navbar.Header>
-        
-        <Navbar.Collapse in={!isCollapsed}>
-            <Hideable hide={!showNavSections}>
-                <NavSections groupRankingsClick={groupRankingsClick} 
-                             myRankingsClick={myRankingsClick}
-                             name={name}
-                             logout={logOut}/>
-            </Hideable>    
+        <Navbar.Collapse>
+            <Navbar.Form pullRight>
+                <Show show={showLogOut}>
+                    <LogOutButton logOut={logOut}/>
+                </Show>
+            </Navbar.Form>
         </Navbar.Collapse>
     </Navbar>
     
